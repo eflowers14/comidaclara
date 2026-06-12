@@ -206,14 +206,16 @@ function Home() {
       <main className="mx-auto max-w-xl px-4 pb-24 pt-8">
         <header className="mb-6 text-center">
           <div className="mb-2 text-5xl">🍳</div>
-          <h1 className="text-3xl font-bold tracking-tight text-stone-800">¿Qué cocino?</h1>
+          <h1 className="text-3xl font-bold tracking-tight text-stone-800">
+            ¿Qué cocino? — Recetas fáciles con lo que tienes en casa
+          </h1>
           <p className="mt-1 text-sm text-stone-600">
             Dime qué tienes y te digo qué cocinar
           </p>
         </header>
 
         <section className="rounded-3xl bg-white p-4 shadow-sm ring-1 ring-stone-200/60">
-          <label className="mb-2 block text-sm font-medium text-stone-700">
+          <label htmlFor="ingredientes-input" className="mb-2 block text-sm font-medium text-stone-700">
             Tus ingredientes
           </label>
           <div className="flex flex-wrap gap-2 rounded-2xl border border-stone-200 bg-stone-50 p-2 focus-within:border-orange-400">
@@ -234,6 +236,8 @@ function Home() {
               </span>
             ))}
             <Input
+              id="ingredientes-input"
+              aria-label="Añadir ingredientes"
               value={texto}
               onChange={(e) => setTexto(e.target.value)}
               onKeyDown={onKey}
