@@ -43,16 +43,17 @@ Reglas:
 - Devuelve solo JSON válido según el schema.`;
 
     try {
-      const { experimental_output } = await generateText({
+      const { output } = await generateText({
         model,
         prompt,
-        experimental_output: Output.object({ schema: OutputSchema }),
+        output: Output.object({ schema: OutputSchema }),
       });
-      return { recetas: experimental_output.recetas };
+      return { recetas: output.recetas };
     } catch (err) {
+      console.error("[sugerirRecetasIA] error:", err);
       const msg = err instanceof Error ? err.message : String(err);
       if (msg.includes("429")) throw new Error("RATE_LIMIT");
       if (msg.includes("402")) throw new Error("CREDITS");
-      throw new Error("IA_ERROR");
+      throw new Error(`IA_ERROR: ${msg.slice(0, 300)}`);
     }
   });
