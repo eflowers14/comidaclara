@@ -5,6 +5,60 @@ import { recetas as recetasLocales } from "@/data/recipes";
 import { normalizar, type Recipe } from "@/lib/recipe-match";
 
 export const Route = createFileRoute("/receta/$id")({
+  head: ({ params }) => {
+    const local = recetasLocales.find((r) => r.id === params.id);
+    const url = `https://comidaclara.lovable.app/receta/${params.id}`;
+    if (local) {
+      const title = `${local.nombre} — Receta fácil paso a paso | Comida Clara`.slice(0, 60);
+      const description =
+        `Cómo hacer ${local.nombre.toLowerCase()} en ${local.tiempoMin} min. Ingredientes y pasos sencillos para ${local.porciones} porciones.`.slice(
+          0,
+          160,
+        );
+      return {
+        meta: [
+          { title },
+          { name: "description", content: description },
+          { property: "og:title", content: title },
+          { property: "og:description", content: description },
+          { property: "og:type", content: "article" },
+          { property: "og:url", content: url },
+        ],
+        links: [{ rel: "canonical", href: url }],
+        scripts: [
+          {
+            type: "application/ld+json",
+            children: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Recipe",
+              name: local.nombre,
+              description,
+              recipeYield: `${local.porciones} porciones`,
+              totalTime: `PT${local.tiempoMin}M`,
+              recipeIngredient: local.ingredientes,
+              recipeInstructions: local.pasos.map((p) => ({
+                "@type": "HowToStep",
+                text: p,
+              })),
+            }),
+          },
+        ],
+      };
+    }
+    const title = "Receta sugerida | Comida Clara";
+    const description = "Receta sugerida a partir de tus ingredientes en Comida Clara.";
+    return {
+      meta: [
+        { title },
+        { name: "description", content: description },
+        { property: "og:title", content: title },
+        { property: "og:description", content: description },
+        { property: "og:type", content: "article" },
+        { property: "og:url", content: url },
+      ],
+      links: [{ rel: "canonical", href: url }],
+    };
+  },
   component: DetalleReceta,
   notFoundComponent: () => (
     <div className="flex min-h-screen items-center justify-center bg-orange-50 p-6 text-center">

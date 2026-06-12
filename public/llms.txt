@@ -1,0 +1,15 @@
+# Comida Clara
+
+> Encuentra recetas fáciles a partir de los ingredientes que ya tienes en casa.
+
+Comida Clara es una app web móvil en español. Escribes los ingredientes que tienes disponibles y devuelve recetas locales y sugerencias generadas por IA con pasos de preparación, tiempo y dificultad.
+
+## Pages
+
+- [Inicio — Buscar recetas por ingredientes](/): introduce ingredientes y descubre recetas.
+- [Comidas rápidas y baratas](/comidas-baratas): recetas con 5 ingredientes o menos.
+
+## Optional
+
+- [Ejemplo de receta: Tortilla de patatas](/receta/tortilla-patatas)
+- [Ejemplo de receta: Pasta al ajo y aceite](/receta/pasta-ajo-aceite)
