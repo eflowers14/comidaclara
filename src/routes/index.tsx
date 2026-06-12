@@ -13,16 +13,41 @@ import { sugerirRecetasIA } from "@/lib/recipes.functions";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "¿Qué cocino? — Recetas con lo que tienes en casa" },
+      { title: "¿Qué cocino? — Recetas fáciles con lo que tienes en casa" },
       {
         name: "description",
         content:
           "Escribe los ingredientes que tienes en la nevera y descubre recetas fáciles para cocinar hoy.",
       },
-      { property: "og:title", content: "¿Qué cocino?" },
+      { property: "og:title", content: "¿Qué cocino? — Recetas fáciles con lo que tienes en casa" },
       {
         property: "og:description",
         content: "Recetas a partir de los ingredientes que ya tienes.",
+      },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://comidaclara.lovable.app/" },
+    ],
+    links: [{ rel: "canonical", href: "https://comidaclara.lovable.app/" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: "Comida Clara",
+          url: "https://comidaclara.lovable.app/",
+          description:
+            "Encuentra recetas fáciles a partir de los ingredientes que tienes en casa.",
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "Comida Clara",
+          url: "https://comidaclara.lovable.app/",
+        }),
       },
     ],
   }),
