@@ -50,9 +50,10 @@ Reglas:
       });
       return { recetas: experimental_output.recetas };
     } catch (err) {
+      console.error("[sugerirRecetasIA] error:", err);
       const msg = err instanceof Error ? err.message : String(err);
       if (msg.includes("429")) throw new Error("RATE_LIMIT");
       if (msg.includes("402")) throw new Error("CREDITS");
-      throw new Error("IA_ERROR");
+      throw new Error(`IA_ERROR: ${msg.slice(0, 300)}`);
     }
   });
