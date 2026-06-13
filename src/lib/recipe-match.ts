@@ -52,5 +52,14 @@ export function emparejar(recetas: Recipe[], disponibles: string[]): MatchResult
     const score = tiene.length / receta.ingredientes.length - faltan.length * 0.05;
     resultados.push({ receta, tiene, faltan, score });
   }
-  return resultados.sort((a, b) => b.score - a.score);
+  return resultados.sort(ordenarPorFaltantes);
+}
+
+export function ordenarPorFaltantes(a: MatchResult, b: MatchResult): number {
+  // Primero: menos ingredientes faltantes
+  if (a.faltan.length !== b.faltan.length) return a.faltan.length - b.faltan.length;
+  // Después: más ingredientes que tienes
+  if (a.tiene.length !== b.tiene.length) return b.tiene.length - a.tiene.length;
+  // Desempate: receta más corta primero
+  return a.receta.ingredientes.length - b.receta.ingredientes.length;
 }

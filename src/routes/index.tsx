@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Skeleton } from "@/components/ui/skeleton";
 import { recetas as recetasLocales } from "@/data/recipes";
-import { emparejar, type MatchResult, type Recipe } from "@/lib/recipe-match";
+import { emparejar, ordenarPorFaltantes, type MatchResult, type Recipe } from "@/lib/recipe-match";
 import { sugerirRecetasIA } from "@/lib/recipes.functions";
 
 export const Route = createFileRoute("/")({
@@ -182,7 +182,7 @@ function Home() {
             }
           );
         });
-        setResultados((prev) => [...(prev ?? []), ...nuevos]);
+        setResultados((prev) => [...(prev ?? []), ...nuevos].sort(ordenarPorFaltantes));
       } catch (err) {
         const msg = err instanceof Error ? err.message : "";
         if (msg.includes("RATE_LIMIT"))
