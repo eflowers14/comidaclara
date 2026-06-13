@@ -6,7 +6,7 @@ import { createLovableAiGatewayProvider } from "./ai-gateway.server";
 
 const InputSchema = z.object({
   ingredientes: z.array(z.string().min(1).max(40)).min(1).max(30),
-  excluir: z.array(z.string()).max(50).optional(),
+  excluir: z.array(z.string().min(1).max(80)).max(50).optional(),
 });
 
 const RecetaIA = z.object({
