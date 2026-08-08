@@ -82,7 +82,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "Comida Clara — Recetas fáciles con tus ingredientes" },
       { name: "description", content: "Escribe los ingredientes que tienes y descubre recetas fáciles para cocinar hoy mismo." },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Comida Clara — Recetas fáciles con tus ingredientes" },
+      { property: "og:title", content: "Comida Clara" },
       { property: "og:description", content: "Escribe los ingredientes que tienes y descubre recetas fáciles para cocinar hoy mismo." },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Comida Clara" },
