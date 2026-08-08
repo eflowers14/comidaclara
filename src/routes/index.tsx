@@ -207,7 +207,7 @@ function Home() {
         <header className="mb-6 text-center">
           <div className="mb-2 text-5xl">🍳</div>
           <h1 className="text-3xl font-bold tracking-tight text-stone-800">
-            ¿Qué cocino? — Recetas fáciles con lo que tienes en casa
+            ¿Qué cocino? Recetas fáciles con lo que tienes en Casa
           </h1>
           <p className="mt-1 text-sm text-stone-600">
             Dime qué tienes y te digo qué cocinar
@@ -340,7 +340,6 @@ function Home() {
         )}
 
         <footer className="mt-12 text-center text-xs text-stone-400">
-          Hecho con 🧡 ·{" "}
           <Link to="/" className="underline">
             Inicio
           </Link>
