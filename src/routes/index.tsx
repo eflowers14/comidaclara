@@ -202,7 +202,7 @@ function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-orange-50 via-amber-50 to-rose-50">
+    <div className="min-h-screen bg-linear-to-b from-orange-50 via-amber-50 to-rose-50">
       <main className="mx-auto max-w-xl px-4 pb-24 pt-8">
         <header className="mb-6 text-center">
           <div className="mb-2 text-5xl">🍳</div>
@@ -293,7 +293,7 @@ function Home() {
                     className="flex w-full items-center gap-3 rounded-2xl bg-white p-3 text-left shadow-sm ring-1 ring-stone-200/60 transition hover:ring-orange-300"
                   >
                     <div
-                      className={`flex h-20 w-20 flex-none items-center justify-center rounded-xl bg-gradient-to-br ${receta.gradiente} text-4xl shadow-inner`}
+                      className={`flex h-20 w-20 flex-none items-center justify-center rounded-xl bg-linear-to-br ${receta.gradiente} text-4xl shadow-inner`}
                     >
                       {receta.emoji}
                     </div>
