@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <!-- Fondo Esmeralda Profundo Cambiado a Degradado Ámbar Dorado Rico -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#CA8A04" /> <!-- Goldenrod / Rich Gold -->
+      <stop offset="100%" stop-color="#854D0E" /> <!-- Dark Amber / Brownish Gold -->
+    </linearGradient>
+
+    <!-- Degradado Verde Brillante Cambiado a Degradado Amarillo/Oro Vivo -->
+    <linearGradient id="glowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FDE047" /> <!-- Amarillo Brillante -->
+      <stop offset="100%" stop-color="#EAB308" /> <!-- Oro Vívido -->
+    </linearGradient>
+
+    <!-- Acento Dorado Retenido y Profundizado -->
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FCD34D" /> <!-- Amarillo Ámbar -->
+      <stop offset="100%" stop-color="#F59E0B" /> <!-- Naranja Ámbar -->
+    </linearGradient>
+
+    <!-- Sombra Suave -->
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.35" />
+    </filter>
+  </defs>
+
+  <!-- Base Contenedora con Bordes Redondeados -->
+  <rect width="512" height="512" rx="120" fill="url(#bgGrad)" />
+
+  <g filter="url(#shadow)">
+    <!-- Anillo Exterior (Claridad) -->
+    <circle cx="256" cy="256" r="170" fill="none" stroke="url(#glowGrad)" stroke-width="20" stroke-linecap="round" />
+
+    <!-- Bowl / Plato (Comida) -->
+    <path d="M 140,240 C 140,335 210,360 256,360 C 302,360 372,335 372,240 Z" fill="#FFFFFF" />
+    
+    <!-- Hojas / Frescura (Ahora Amarillo/Oro) -->
+    <!-- Hoja Izquierda - Ahora Degradado Dorado/Amarillo -->
+    <path d="M 230,220 C 190,190 200,130 250,130 C 250,180 230,220 230,220 Z" fill="url(#glowGrad)" />
+    <!-- Hoja Derecha / Púas del tenedor abstractas - Ahora Amarillo Muy Claro -->
+    <path d="M 270,220 C 310,180 300,120 250,120 C 250,170 270,220 270,220 Z" fill="#FEF08A" /> <!-- Very Light Yellow -->
+
+    <!-- Destellos "Clara" Retenidos y Profundizados -->
+    <path d="M 370,140 Q 370,165 395,165 Q 370,165 370,190 Q 370,165 345,165 Q 370,165 370,140 Z" fill="url(#accentGrad)" />
+    <path d="M 150,160 Q 150,173 163,173 Q 150,173 150,186 Q 150,173 137,173 Q 150,173 150,160 Z" fill="url(#accentGrad)" opacity="0.85" />
+  </g>
+</svg>
