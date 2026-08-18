@@ -13,13 +13,13 @@ import { sugerirRecetasIA } from "@/lib/recipes.functions";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "¿Qué cocino? — Recetas fáciles con lo que tienes en casa" },
+      { title: "¿Qué cocino?  Recetas fáciles con lo que tienes en casa" },
       {
         name: "description",
         content:
           "Escribe los ingredientes que tienes en la nevera y descubre recetas fáciles para cocinar hoy.",
       },
-      { property: "og:title", content: "¿Qué cocino? — Recetas fáciles con lo que tienes en casa" },
+      { property: "og:title", content: "¿Qué cocino?  Recetas fáciles con lo que tienes en casa" },
       {
         property: "og:description",
         content: "Recetas a partir de los ingredientes que ya tienes.",
@@ -247,7 +247,7 @@ function Home() {
           </div>
 
           <div className="mt-3">
-            <p className="mb-2 text-xs uppercase tracking-wide text-stone-500">Rápido</p>
+            <p className="mb-2 text-xs uppercase tracking-wide text-stone-500">Atajos</p>
             <div className="flex flex-wrap gap-2">
               {SUGERENCIAS.filter(
                 (s) => !ingredientes.map((i) => i.toLowerCase()).includes(s),
