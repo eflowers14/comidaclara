@@ -205,7 +205,7 @@ function Home() {
     <div className="min-h-screen bg-linear-to-b from-orange-50 via-amber-50 to-rose-50">
       <main className="mx-auto max-w-xl px-4 pb-24 pt-8">
         <header className="mb-6 text-center">
-          <div className="mb-2 text-5xl">🍳</div>
+          <img className="mx-auto mb-2 h-16" src="/favicon.svg" alt="logo" />
           <h1 className="text-3xl font-bold tracking-tight text-stone-800">
             ¿Qué cocino? Recetas fáciles con lo que tienes en Casa
           </h1>
@@ -214,7 +214,7 @@ function Home() {
           </p>
         </header>
 
-        <section className="rounded-3xl bg-white p-4 shadow-sm ring-1 ring-stone-200/60">
+        <section className="shadow rounded-2xl bg-white p-4 ring-1 ring-stone-200/60">
           <label htmlFor="ingredientes-input" className="mb-2 block text-sm font-medium text-stone-700">
             Tus ingredientes
           </label>
@@ -265,7 +265,7 @@ function Home() {
 
           <Button
             onClick={buscar}
-            className="mt-4 h-12 w-full rounded-2xl bg-orange-500 text-base font-semibold text-white hover:bg-orange-600"
+            className="mt-4 h-12 w-full bg-orange-500 text-base font-semibold text-white hover:bg-orange-600"
           >
             Buscar recetas
           </Button>
